@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		287C1F931A2E0A5000ED05B8 /* libSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 287C1F921A2E0A5000ED05B8 /* libSDK.a */; };
 		28AF3E581A2DFCCD00F58B35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF3E571A2DFCCD00F58B35 /* AppDelegate.swift */; };
 		28AF3E5A1A2DFCCD00F58B35 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF3E591A2DFCCD00F58B35 /* FirstViewController.swift */; };
 		28AF3E5C1A2DFCCD00F58B35 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF3E5B1A2DFCCD00F58B35 /* SecondViewController.swift */; };
@@ -14,6 +15,7 @@
 		28AF3E611A2DFCCD00F58B35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28AF3E601A2DFCCD00F58B35 /* Images.xcassets */; };
 		28AF3E641A2DFCCD00F58B35 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AF3E621A2DFCCD00F58B35 /* LaunchScreen.xib */; };
 		28AF3E701A2DFCCD00F58B35 /* ConcentMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF3E6F1A2DFCCD00F58B35 /* ConcentMeterTests.swift */; };
+		9DCF602065C509D076C1889C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1BA43EDD8A22558E8A12C5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		287C1F881A2E09B600ED05B8 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		287C1F921A2E0A5000ED05B8 /* libSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDK.a; path = "../../Library/Developer/Xcode/DerivedData/ConcentMeter-akttnnpulhhtugajmepxnopllhoa/Build/Products/Debug-iphoneos/libSDK.a"; sourceTree = "<group>"; };
 		28AF3E521A2DFCCD00F58B35 /* ConcentMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcentMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AF3E561A2DFCCD00F58B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28AF3E571A2DFCCD00F58B35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,9 @@
 		28AF3E691A2DFCCD00F58B35 /* ConcentMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConcentMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AF3E6E1A2DFCCD00F58B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28AF3E6F1A2DFCCD00F58B35 /* ConcentMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentMeterTests.swift; sourceTree = "<group>"; };
+		4833842F888F440F5201ACDC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7A1BA43EDD8A22558E8A12C5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A6C5B61F1040684F50AEF1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				287C1F931A2E0A5000ED05B8 /* libSDK.a in Frameworks */,
+				9DCF602065C509D076C1889C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +73,8 @@
 				28AF3E541A2DFCCD00F58B35 /* ConcentMeter */,
 				28AF3E6C1A2DFCCD00F58B35 /* ConcentMeterTests */,
 				28AF3E531A2DFCCD00F58B35 /* Products */,
+				88DA6351708D3118282EC289 /* Pods */,
+				81E431CA3EB39A02A1198FAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +90,7 @@
 		28AF3E541A2DFCCD00F58B35 /* ConcentMeter */ = {
 			isa = PBXGroup;
 			children = (
+				287C1F881A2E09B600ED05B8 /* Bridging-Header.h */,
 				28AF3E571A2DFCCD00F58B35 /* AppDelegate.swift */,
 				28AF3E591A2DFCCD00F58B35 /* FirstViewController.swift */,
 				28AF3E5B1A2DFCCD00F58B35 /* SecondViewController.swift */,
@@ -115,6 +127,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		81E431CA3EB39A02A1198FAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				287C1F921A2E0A5000ED05B8 /* libSDK.a */,
+				7A1BA43EDD8A22558E8A12C5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88DA6351708D3118282EC289 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4833842F888F440F5201ACDC /* Pods.debug.xcconfig */,
+				8A6C5B61F1040684F50AEF1F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28AF3E731A2DFCCD00F58B35 /* Build configuration list for PBXNativeTarget "ConcentMeter" */;
 			buildPhases = (
+				F32B7A4F26DA672BABAEE6E1 /* Check Pods Manifest.lock */,
 				28AF3E4E1A2DFCCD00F58B35 /* Sources */,
 				28AF3E4F1A2DFCCD00F58B35 /* Frameworks */,
 				28AF3E501A2DFCCD00F58B35 /* Resources */,
+				F636520652F765B838927A35 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +241,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F32B7A4F26DA672BABAEE6E1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F636520652F765B838927A35 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28AF3E4E1A2DFCCD00F58B35 /* Sources */ = {
@@ -340,21 +405,33 @@
 		};
 		28AF3E741A2DFCCD00F58B35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4833842F888F440F5201ACDC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ConcentMeter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ConcentMeter-akttnnpulhhtugajmepxnopllhoa/Build/Products/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ConcentMeter/Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		28AF3E751A2DFCCD00F58B35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A6C5B61F1040684F50AEF1F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ConcentMeter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ConcentMeter-akttnnpulhhtugajmepxnopllhoa/Build/Products/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ConcentMeter/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +488,7 @@
 				28AF3E751A2DFCCD00F58B35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28AF3E761A2DFCCD00F58B35 /* Build configuration list for PBXNativeTarget "ConcentMeterTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +497,7 @@
 				28AF3E781A2DFCCD00F58B35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

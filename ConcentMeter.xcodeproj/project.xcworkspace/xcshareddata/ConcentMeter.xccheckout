@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>37B55727-83A6-40FF-8FFC-7C094971009D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ConcentMeter</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B81AC47416279BA0AD8EE9AF7887BF84C0ACC0CB</key>
+		<string>https://github.com/bellx2/ConcentMeter.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ConcentMeter.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B81AC47416279BA0AD8EE9AF7887BF84C0ACC0CB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bellx2/ConcentMeter.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B81AC47416279BA0AD8EE9AF7887BF84C0ACC0CB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B81AC47416279BA0AD8EE9AF7887BF84C0ACC0CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ConcentMeter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
