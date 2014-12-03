@@ -13,6 +13,7 @@ class FirstViewController: UIViewController,HVC_Delegate {
 	var HvcBLE:HVC_BLE = HVC_BLE()
 	var ExecuteFlag:HVC_FUNCTION = HVC_ACTIV_FACE_DETECTION
 	var Connected = false
+	var timeCounting = false
 	var faceOn:Float = 1.0
 	var faceOff:Float = 1.0
 	var timer = NSTimer()
@@ -20,12 +21,15 @@ class FirstViewController: UIViewController,HVC_Delegate {
 	
 	@IBOutlet weak var gaugeView: WMGaugeView!
 	@IBOutlet weak var timeLabel: UILabel!
-	
+	@IBOutlet weak var faceDetected: UIImageView!
+	@IBOutlet weak var eyeImgae: UIImageView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		HvcBLE.delegateHVC = self
 		
+		faceDetected.hidden = true
+		eyeImgae.hidden = true
 		
 		gaugeView.maxValue = 100.0;
 		gaugeView.scaleDivisions = 10;
@@ -77,7 +81,7 @@ class FirstViewController: UIViewController,HVC_Delegate {
 	}
 	
 	@IBAction func doStart(sender: AnyObject) {
-		timer.invalidate()
+		self.timeCounting = false
 		HvcBLE.disconnect()
 		Connected = false
 		let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -92,16 +96,19 @@ class FirstViewController: UIViewController,HVC_Delegate {
 		param.face().setMinSize(60)
 		param.face().setMaxSize(480)
 		HvcBLE.setParam(param)
+		eyeImgae.hidden = false
 	}
 	
 	func onDisconnected() {
 		MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+		eyeImgae.hidden = true
 	}
 	
 	func onPostSetParam(err: HVC_ERRORCODE, status outStatus: UInt8) {
 		dispatch_async(dispatch_get_main_queue(),{
 			var res = HVC_RES()
 			self.HvcBLE.Execute(self.ExecuteFlag, result: res)
+			self.timeCounting = true
 		})
 	}
 	
@@ -114,8 +121,10 @@ class FirstViewController: UIViewController,HVC_Delegate {
 		}
 		if (result.sizeFace() > 0){
 			faceOn += 1.0
+			faceDetected.hidden = false
 		}else{
 			faceOff += 1.0
+			faceDetected.hidden = true
 		}
 		let faceRate:Float = (faceOn/faceOff) * 100
 		gaugeView.setValue(faceRate, animated: true)
@@ -129,11 +138,13 @@ class FirstViewController: UIViewController,HVC_Delegate {
 	}
 	
 	func timeCount(){
-		let cTime = NSDate.timeIntervalSinceReferenceDate() - self.startTime
-		let hour = Int(cTime/(60*60))
-		let minutes = Int(fmod((cTime/60),60))
-		let secound = Int(fmod(cTime,60))
-		timeLabel.text = NSString(format: "%02d:%02d:%02d", hour,minutes,secound)
+		if (self.timeCounting == true){
+			let cTime = NSDate.timeIntervalSinceReferenceDate() - self.startTime
+			let hour = Int(cTime/(60*60))
+			let minutes = Int(fmod((cTime/60),60))
+			let secound = Int(fmod(cTime,60))
+			timeLabel.text = NSString(format: "%02d:%02d:%02d", hour,minutes,secound)
+		}
 	}
 
 }
