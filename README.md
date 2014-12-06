@@ -6,3 +6,7 @@ HVC-Cを正面においてアプリを起動するだけで、どのくらいの
 ( ﾟдﾟ)ﾊｯ!と気づく事ができます。
 
 OmronのHVC-CデバイスとSDKが必要です。
+
+[![CencentMeter](http://img.youtube.com/vi/MiXX0uEOJFY/0.jpg)](http://www.youtube.com/watch?v=MiXX0uEOJFY)
+
+
