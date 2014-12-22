@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 class FirstViewController: UIViewController,HVC_Delegate {
 
@@ -25,6 +26,17 @@ class FirstViewController: UIViewController,HVC_Delegate {
 	@IBOutlet weak var eyeImgae: UIImageView!
 	
 	override func viewDidLoad() {
+        
+                var obj = FCEvent()
+                obj.datetime = "2014/12/03 10:15"
+                obj.faceOK = 100
+                obj.faceNG = 10
+                let realm = RLMRealm.defaultRealm()
+        
+                realm.transactionWithBlock { () -> Void in
+                    realm.addObject(obj)
+                }
+        
 		super.viewDidLoad()
 		HvcBLE.delegateHVC = self
 		
