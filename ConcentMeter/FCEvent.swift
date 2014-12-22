@@ -12,8 +12,6 @@ import Realm
 class FCEvent : RLMObject{
     
     dynamic var datetime = ""
-    dynamic var faceOK  = 0
-    dynamic var faceNG  = 0
-    
+	dynamic var faceRate:Float  = 0.0
 }
 

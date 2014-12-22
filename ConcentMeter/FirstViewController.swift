@@ -11,7 +11,7 @@ import Realm
 
 class FirstViewController: UIViewController,HVC_Delegate {
 
-	var HvcBLE:HVC_BLE = HVC_BLE()
+	var HvcBLE:HVC_BLE!
 	var ExecuteFlag:HVC_FUNCTION = HVC_ACTIV_FACE_DETECTION
 	var Connected = false
 	var timeCounting = false
@@ -27,19 +27,18 @@ class FirstViewController: UIViewController,HVC_Delegate {
 	
 	override func viewDidLoad() {
         
-                var obj = FCEvent()
-                obj.datetime = "2014/12/03 10:15"
-                obj.faceOK = 100
-                obj.faceNG = 10
-                let realm = RLMRealm.defaultRealm()
-        
-                realm.transactionWithBlock { () -> Void in
-                    realm.addObject(obj)
-                }
-        
-		super.viewDidLoad()
-		HvcBLE.delegateHVC = self
+//                var obj = FCEvent()
+//                obj.datetime = "2014/12/03 10:15"
+//                obj.faceOK = 100
+//                obj.faceNG = 10
+//                let realm = RLMRealm.defaultRealm()
+//        
+//                realm.transactionWithBlock { () -> Void in
+//                    realm.addObject(obj)
+//                }
 		
+		super.viewDidLoad()
+
 		faceDetected.hidden = true
 		eyeImgae.hidden = true
 		
@@ -61,13 +60,17 @@ class FirstViewController: UIViewController,HVC_Delegate {
 		gaugeView.needleHeight = 0.4;
 		gaugeView.needleScrewStyle = WMGaugeViewNeedleScrewStylePlain;
 		gaugeView.needleScrewRadius = 0.05;
+
+		HvcBLE = HVC_BLE()
+		HvcBLE.delegateHVC = self
 	}
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
 	
-	@IBAction func pushButton(sender: AnyObject) {
+	@IBAction func btnStart(sender: AnyObject) {
+
 		HvcBLE.deviceSearch()
 		let devices = HvcBLE.getDevices()
 		
@@ -92,12 +95,28 @@ class FirstViewController: UIViewController,HVC_Delegate {
 		hud.labelText = "デバイスを探しています"
 	}
 	
-	@IBAction func doStart(sender: AnyObject) {
+	@IBAction func btnStop(sender: AnyObject) {
 		self.timeCounting = false
 		HvcBLE.disconnect()
 		Connected = false
 		let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
 		hud.labelText = "切断処理中"
+		
+		let faceRate:Float = faceOn/(faceOn+faceOff) * 100
+		println("faceON \(faceRate)")
+		
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+  		dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+		
+		var obj = FCEvent()
+		obj.datetime = dateFormatter.stringFromDate(NSDate())
+		obj.faceRate =  faceRate
+		let realm = RLMRealm.defaultRealm()
+		
+		realm.transactionWithBlock { () -> Void in
+			realm.addObject(obj)
+		}
 	}
 	
 	func onConnected() {
@@ -114,12 +133,22 @@ class FirstViewController: UIViewController,HVC_Delegate {
 	func onDisconnected() {
 		MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
 		eyeImgae.hidden = true
+		faceOn = 0
+		faceOff = 0
+		timeLabel.text = "00:00:00"
+		gaugeView.setValue(0.0, animated: true)
+		Connected = false
+		
+		HvcBLE = nil
+		HvcBLE = HVC_BLE()
+		HvcBLE.delegateHVC = self
 	}
 	
 	func onPostSetParam(err: HVC_ERRORCODE, status outStatus: UInt8) {
 		dispatch_async(dispatch_get_main_queue(),{
 			var res = HVC_RES()
 			self.HvcBLE.Execute(self.ExecuteFlag, result: res)
+			self.startTime = NSDate.timeIntervalSinceReferenceDate()
 			self.timeCounting = true
 		})
 	}
@@ -128,7 +157,7 @@ class FirstViewController: UIViewController,HVC_Delegate {
 		if (self.Connected == false){
 			Connected = true
 			MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-			startTime = NSDate.timeIntervalSinceReferenceDate()
+//			startTime = NSDate.timeIntervalSinceReferenceDate()
 			timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timeCount", userInfo: nil, repeats: true)
 		}
 		if (result.sizeFace() > 0){
@@ -138,7 +167,7 @@ class FirstViewController: UIViewController,HVC_Delegate {
 			faceOff += 1.0
 			faceDetected.hidden = true
 		}
-		let faceRate:Float = (faceOn/faceOff) * 100
+		let faceRate:Float = faceOn/(faceOn+faceOff) * 100
 		gaugeView.setValue(faceRate, animated: true)
 		
 		dispatch_async(dispatch_get_main_queue(), {

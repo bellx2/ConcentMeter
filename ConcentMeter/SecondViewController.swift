@@ -49,7 +49,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let ev = events.objectAtIndex(UInt(indexPath.row)) as FCEvent
         //cell.textLabel?.text = ev.datetime
         cell.titleLabel.text = ev.datetime
-        cell.rateLabel.text = "\(ev.faceOK*100/((ev.faceOK+ev.faceNG)))%"
+        cell.rateLabel.text = "\(ev.faceRate) %"
         //        println("ok\(ev.faceOK):ng\(ev.faceNG)")
         return cell
     }
@@ -62,7 +62,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             realm.transactionWithBlock({ () -> Void in
                 realm.deleteObject(ev)
             })
-//            tableView.reloadData()
+			tableView.reloadData()
         }
     }
     
