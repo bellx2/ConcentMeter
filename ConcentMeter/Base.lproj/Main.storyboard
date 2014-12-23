@@ -50,11 +50,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXx-3C-cxB" customClass="WMGaugeView">
                                 <rect key="frame" x="175" y="60" width="250" height="250"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glyphicons-524-user-asterisk" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-bE-RY0">
-                                        <rect key="frame" x="212" y="212" width="38" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hvc" translatesAutoresizingMaskIntoConstraints="NO" id="IqB-e3-MdL">
+                                        <rect key="frame" x="3" y="221" width="36" height="27"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glyphicons-52-eye-open" translatesAutoresizingMaskIntoConstraints="NO" id="IqB-e3-MdL">
-                                        <rect key="frame" x="0.0" y="218" width="36" height="27"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glyphicons-524-user-asterisk" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-bE-RY0">
+                                        <rect key="frame" x="218" y="218" width="32" height="33"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,8 +174,8 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="glyphicons-52-eye-open" width="31" height="17"/>
         <image name="glyphicons-524-user-asterisk" width="26" height="24"/>
+        <image name="hvc" width="434" height="341"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
